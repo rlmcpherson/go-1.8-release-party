@@ -2,7 +2,9 @@ Go 1.8 Release Party
 Atlanta Go Meetup
 16 Feb 2017
 
-YOUR MEETUP
+Randall McPherson
+
+@rlmcpherson
 
 * License and Materials
 
@@ -201,7 +203,7 @@ The new `go`bug` command starts a bug report on GitHub, prefilled with informati
 
 Example:
 
-.play examples/gobug.sh /go bug/
+/*.play examples/gobug.sh /go bug/*/
 
 * Mutex contention profile
 
@@ -387,7 +389,7 @@ A long requested feature, graceful shutdown of a `http.Server` was added in Go 1
 
 Call `Shutdown` when a signal is received:
 
-.code examples/shutdown.go /main\(\) {/,/^}
+/*.code examples/shutdown.go /main\(\) {/,/^}*/
 
 * HTTP/2
 
