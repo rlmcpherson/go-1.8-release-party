@@ -135,36 +135,7 @@ The number of platforms Go supports, on balance, continues to grow.
 - The Plan 9 port's networking support is now much more complete and matches the behavior of Unix and Windows with respect to deadlines and cancelation.
 - Go 1.8 now only supports OS X 10.8 or later. _This_is_likely_the_last_Go_release_to_support_10.8_. Compiling Go or running binaries on older OS X versions is untested.
 
-* Go 1.8 may be the last to support ARMv5
-
-Supporting ARMv5 has been a problem for several releases. 
-
-Currently we have no ARMv5 builders so have no idea if Go 1.8 actually works on real ARMv5 hardware (we test on ARMv7).
-
-Several companies have complained about loosing ARMv5 support, and several have offered to run a builder -- but there are _still_ no real ARMv5 builders on the dashboard.
-
-If you or your company care about ARMv5, you have to shoulder some of the burden. Contact @bradfitz and set up a builder.
-
-.link https://github.com/golang/go/issues/17082 Proposal: runtime: drop support for linux/armv5E and linux/armv6
-.link https://github.com/golang/go/wiki/DashboardBuilders Dashboard Builders (wiki)
-
-_No_ARMv5_builders_means_ARMv5_support_will_be_dropped_in_Go_1.9_.
-
 * Tool changes
-
-* go tool yacc
-
-The yacc tool (previously available by running “go tool yacc”) has been removed. As of Go 1.7 it was no longer used by the Go compiler.
-
-It has moved to the “tools” repository and is now available at golang.org/x/tools/cmd/goyacc.
-
-* go tool asm
-
-`go`tool`asm` now supports a flotilla of Intel and PPC vector instructions.
-
-For 64-bit x86 systems, the following instructions have been added: `VBROADCASTSD`, `BROADCASTSS`, `MOVDDUP`, `MOVSHDUP`, `MOVSLDUP`, `VMOVDDUP`, `VMOVSHDUP`, and `VMOVSLDUP`.
-
-For 64-bit PPC systems, the common vector scalar instructions have been added: `LXS`, `LXSDX`, `LXSI`, `LXSIWAX`, `LXSIWZX`, `LXV`, `LXVD2X`, `LXVDSX`, `LXVW4X`, `MFVSR`, `MFVSRD`, `MFVSRWZ`, `MTVSR`, `MTVSRD`, `MTVSRWA`, `MTVSRWZ`, `STXS`, `STXSDX`, `STXSI`, `STXSIWX`, `STXV`, `STXVD2X`, `STXVW4X`, `XSCV`, `XSCVDPSP`, `XSCVDPSPN`, `XSCVDPSXDS`, `XSCVDPSXWS`, `XSCVDPUXDS`, `XSCVDPUXWS`, `XSCVSPDP`, `XSCVSPDPN`, `XSCVSXDDP`, `XSCVSXDSP`, `XSCVUXDDP`, `XSCVUXDSP`, `XSCVX`, `XSCVXP`, `XVCV`, `XVCVDPSP`, `XVCVDPSXDS`, `XVCVDPSXWS`, `XVCVDPUXDS`, `XVCVDPUXWS`, `XVCVSPDP`, `XVCVSPSXDS`, `XVCVSPSXWS`, `XVCVSPUXDS`, `XVCVSPUXWS`, `XVCVSXDDP`, `XVCVSXDSP`, `XVCVSXWDP`, `XVCVSXWSP`, `XVCVUXDDP`, `XVCVUXDSP`, `XVCVUXWDP`, `XVCVUXWSP`, `XVCVX`, `XVCVXP`, `XXLAND`, `XXLANDC`, `XXLANDQ`, `XXLEQV`, `XXLNAND`, `XXLNOR`, `XXLOR`, `XXLORC`, `XXLORQ`, `XXLXOR`, `XXMRG`, `XXMRGHW`, `XXMRGLW`, `XXPERM`, `XXPERMDI`, `XXSEL`, `XXSI`, `XXSLDWI`, `XXSPLT`, and `XXSPLTW`.
 
 * go tool trace
 
@@ -193,14 +164,6 @@ Vet is stricter in some ways and looser where it previously caused false positiv
 * go fix
 
 `go`fix` now rewrites references to `golang.org/x/net/context` to the standard library provided `context` package.
-
-* go bug
-
-The new `go`bug` command starts a bug report on GitHub, prefilled with information about the current system.
-
-Example:
-
-.play examples/gobug.sh /go bug/
 
 * Default $GOPATH
 
@@ -245,12 +208,6 @@ _note_: Due to an oversight this only works with `sync.Mutex`, not `sync.RWMutex
          .          .     17:func BenchmarkMutex(b *testing.B) {
          .          .     18:   const N = 16
          .          .     19:   for n := 0; n < b.N; n++ {
-
-* Homework
-
-Mutex profile is not supported in, [[pkg/profile][https://github.com/pkg/profile]]. yet ...
-
-Who wants to be the first to send me a PR?
 
 * Plugins
 
@@ -332,10 +289,6 @@ Continuing Go 1.7's adoption of `context.Context` into the standard library, Go 
 - There have been significant additions to the `database/sql` package with context support.
 - All nine of the new `Lookup` methods on the new `net.Resolver` now take a context.
 
-* Minor changes
-
-.link http://beta.golang.org/doc/go1.8#minor_library_changes Minor library changes
-
 * What's coming up in Go 1.9
 
 * What's coming up in Go 1.9
@@ -406,4 +359,17 @@ It's described as _pre_alpha_ at the moment, but you should check it out, and le
 Upgrade to Go 1.8, now!
 
 It's literally the best version of Go, _ever_.
+
+* Give a talk at the ATL Go Meetup
+
+Lightning talks are always welcome. Just show up and let me know you want to talk.
+
+Beginner talks are some of the most valuable talks. You _do_not_ need to be a go expert.
+
+
+
+Contact: 
+email: randall@mcpherson.io
+twitter: rlmcpherson
+or meetup.com/Go-Users-Group-Atlanta
 
