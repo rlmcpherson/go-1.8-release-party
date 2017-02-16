@@ -6,18 +6,6 @@ Randall McPherson
 
 @rlmcpherson
 
-* License and Materials
-
-This presentation is licensed under the [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International]] licence.
-
-The materials for this presentation are available on GitHub:
-
-.link https://github.com/davecheney/go-1.8-release-party
-
-You are encouraged to remix, transform, or build upon the material, providing you distribute your contributions under the same license.
-
-If you have suggestions or corrections to this presentation, please raise [[https://github.com/davecheney/go-1.8-release-party/issues][an issue on the GitHub project]].
-
 * Go 1.8
 
 Go 1.8 is _really_close_ to release. Seriously.
@@ -212,7 +200,7 @@ The new `go`bug` command starts a bug report on GitHub, prefilled with informati
 
 Example:
 
-/*.play examples/gobug.sh /go bug/*/
+.play examples/gobug.sh /go bug/
 
 * Default $GOPATH
 
@@ -326,7 +314,7 @@ A long requested feature, graceful shutdown of a `http.Server` was added in Go 1
 
 Call `Shutdown` when a signal is received:
 
-/*.code examples/shutdown.go /main\(\) {/,/^}*/
+.code examples/shutdown.go /main\(\) {/,/^}
 
 * HTTP/2
 
